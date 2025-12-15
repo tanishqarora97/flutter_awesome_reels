@@ -152,7 +152,7 @@ class StreamingService {
   Future<bool> _isMobileNetwork() async {
     try {
       final connectivityResults = await Connectivity().checkConnectivity();
-      return connectivityResults.contains(ConnectivityResult.mobile);
+      return connectivityResults == ConnectivityResult.mobile;
     } catch (e) {
       return false;
     }
